@@ -2,6 +2,66 @@
 
 using namespace std;
 
+void Algorithm1(int *a, int b)
+{
+
+	int i, j, min, index, temp;
+	for ( i = 0; i < b; i++)
+	{
+		min = 9999; //모든 원소보다 큰 숫자 / 아무 값;
+
+		for (j = i; j < b; j++)
+		{
+			if (min > a[j])
+			{
+				min = a[j]; // 1 = 1; 2 = 2;
+				index = j;
+			}
+		}
+
+		//가장 앞에 있는 것과 최소값을 바꿈;
+		temp = a[i];
+		a[i] = a[index];
+		a[index] = temp;
+	}
+
+	for (i = 0; i < b; i++)
+		cout << a[i] << endl;
+}
+
+
+void Algorithm2(int *a, int b) // 배열 받을 시 포인터로 주소를 받아옴;
+{
+/*
+버블 정렬
+
+선택 정렬과 마찬가지로 직관적
+
+옆에 있는 값과 비교해서 더 작은 값을 앞으로 보냄;
+
+효율성이 가장 떨어짐;
+
+*/
+
+	int i, j, temp;
+	/*int count = sizeof(a)/ sizeof(a[0]);*/
+
+	for (i = 0; i < b; i++)
+	{
+		for (j = 0; j < (b - 1) - i; j++)
+		{
+			if (a[j] > a[j + 1])
+			{
+				temp = a[j];
+				a[j] = a[j + 1];
+				a[j + 1] = temp;
+			}
+		}
+	}
+	for (i = 0; i < b; i++)
+		cout << a[i] << endl;
+}
+
 int main()
 {
 	//i, j는 탐색용
@@ -9,31 +69,13 @@ int main()
 
 	//가장 작은값 index
 
-	int i, j, min, index, temp;
+	
 
 
 	int array[10] = { 1,10,5,8,7,6,4,3,2,9 };
-	for (i = 0; i < 10; i++)
-	{
-		min = 9999; //모든 원소보다 큰 숫자 / 아무 값;
-
-		for (j = i; j < 10; j++)
-		{
-			if (min > array[j])
-			{
-				min = array[j]; // 1 = 1; 2 = 2;
-				index = j;
-			}
-		}
-
-		//가장 앞에 있는 것과 최소값을 바꿈;
-		temp = array[i];
-		array[i] = array[index];
-		array[index] = temp;
-	}
-
-	for (i = 0; i < 10; i++)
-		cout << array[i] << endl;
+	
+	Algorithm1(array, 10);
+	//Algorithm2(array, 10);
 
 	return 0;
 }
