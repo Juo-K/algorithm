@@ -66,57 +66,57 @@ int main()
 }
 
 /* 막대사탕*/
-//int main()
-//{
-//	int w, h; // 가로 세로
-//	1 <= w; w <= 100; 1 <= h; h <= 100;
-//
-//
-//	int n; // 막대의 개수 
-//	int i, d, x, y; //길이 방향 좌표
-//	cin >> w >> h;
-//
-//	int a[100][100];
-//
-//	for (int k = 1; k <= w; k++)
-//	{
-//		for (int f = 1; f <= h; f++)
-//		{
-//			a[k][f] = 0;
-//		}
-//	}
-//
-//	cin >> n;
-//	for (int k = 1; k <= n; k++)
-//	{
-//		cin >> i >> d >> x >> y;
-//		if (d == 0)
-//		{
-//			for (int f = y; f < y + i; f++)
-//			{
-//				a[x][f] = 1;
-//			}//for f
-//		
-//		}
-//
-//		if (d == 1)
-//		{
-//			for (int j = x; j < x+i; j++)
-//			{
-//				a[j][y] = 1;
-//			}//for j
-//		}
-//	}//for k
-//
-//	for (int k = 1; k <= w; k++)
-//	{
-//		for (int f = 1; f <= h; f++)
-//		{
-//			cout << a[k][f] << " ";
-//		}
-//		cout << endl;
-//	}
-//}
+int main()
+{
+	int w, h; // 가로 세로
+	1 <= w; w <= 100; 1 <= h; h <= 100;
+
+
+	int n; // 막대의 개수 
+	int i, d, x, y; //길이 방향 좌표
+	cin >> w >> h;
+
+	int a[100][100]{};
+
+	for (int k = 1; k <= w; k++)
+	{
+		for (int f = 1; f <= h; f++)
+		{
+			a[k][f] = 0;
+		}
+	}
+
+	cin >> n;
+	for (int k = 1; k <= n; k++)
+	{
+		cin >> i >> d >> x >> y;
+		if (d == 0)
+		{
+			for (int f = y; f < y + i; f++)
+			{
+				a[x][f] = 1;
+			}//for f
+		
+		}
+
+		if (d == 1)
+		{
+			for (int j = x; j < x+i; j++)
+			{
+				a[j][y] = 1;
+			}//for j
+		}
+	}//for k
+
+	for (int k = 1; k <= w; k++)
+	{
+		for (int f = 1; f <= h; f++)
+		{
+			cout << a[k][f] << " ";
+		}
+		cout << endl;
+	}
+}
 
 //int main() // 바둑판 뒤집기
 //{
